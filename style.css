@@ -1,0 +1,72 @@
+.i-search {
+  font-size: 10pt;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 20pt;
+  font-family: "Work Sans", sans-serif;
+}
+
+h3,
+h4 {
+  text-align: left;
+  color: #adb5bd;
+}
+
+h1,
+h3 {
+  font-weight: 600;
+  font-size: 25pt;
+}
+
+h2,
+h4 {
+  font-weight: 300;
+  font-size: 20pt;
+}
+
+h5 {
+  font-weight: 300;
+  font-size: 15pt;
+}
+
+.temp-links {
+  font-weight: 300;
+  font-size: 15pt;
+}
+
+.i-icons {
+  color: #fca311;
+  font-size: 40pt;
+  line-height: 40pt;
+}
+
+p {
+  font-family: "Work Sans", sans-serif;
+}
+
+.btn-outline-warning {
+  border-color: #fca311;
+}
+
+.btn-outline-warning:hover {
+  color: #fca311;
+}
+
+.next {
+  font-weight: 600;
+  color: #adb5bd;
+  font-size: 15pt;
+}
+
+.day {
+  line-height: 30pt;
+}
+
+.temp {
+  line-height: 0pt;
+  color: #adb5bd;
+}
