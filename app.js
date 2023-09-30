@@ -1,4 +1,3 @@
-//challenge 1
 let currentTime = new Date();
 let h5 = document.querySelector("h5");
 
@@ -10,7 +9,7 @@ function formatDate(date) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday",
+    "Saturday"
   ];
 
   let currentDay = days[date.getDay()];
@@ -20,33 +19,28 @@ function formatDate(date) {
 }
 formatDate(currentTime);
 
-//challenge 2
+function changeTemp(response) {
+  let h3 = document.querySelector("h3");
+  let temperature = Math.round(response.data.main.temp);
+  h3.innerHTML = `${temperature}°C`;
+  let h2 = document.querySelector("h2");
+  h2.innerHTML = response.data.sys.country;
+}
+
 function showCity(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input");
   let h1 = document.querySelector("h1");
   h1.innerHTML = cityInput.value;
+
+  let selectCity = document.querySelector("#city-form");
+  selectCity.addEventListener("click", showCity);
+
+  let apiKey = "1a6432c5ca7b6f9b0bee45c98d54ea71";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&units=metric`;
+
+  console.log(apiUrl);
+  axios.get(apiUrl).then(changeTemp);
 }
 
-let selectCity = document.querySelector("#city-form");
-selectCity.addEventListener("click", showCity);
-
-//challenge 3
-
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#current-temperature");
-  temperatureElement.innerHTML = 36;
-}
-
-function convertToCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#current-temperature");
-  temperatureElement.innerHTML = 90;
-}
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convertToCelsius);
+showCity(event);
