@@ -33,9 +33,6 @@ function showCity(event) {
   let h1 = document.querySelector("h1");
   h1.innerHTML = cityInput.value;
 
-  let selectCity = document.querySelector("#city-form");
-  selectCity.addEventListener("click", showCity);
-
   let apiKey = "535cacbb3f8a0df0aeb4790235b9541f";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&units=metric`;
 
@@ -43,4 +40,5 @@ function showCity(event) {
   axios.get(apiUrl).then(changeTemp);
 }
 
-showCity(event);
+let selectCity = document.querySelector("#city-form");
+selectCity.addEventListener("click", showCity);
