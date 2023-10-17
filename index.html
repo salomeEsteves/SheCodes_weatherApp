@@ -30,35 +30,40 @@
   </head>
   <body>
     <div class="container">
-      <div class="col-8 card">
+      <div class="wrapper">
+      <div class="card">
         <div class="card-body">
           <form class="row g-3" id="city-form">
-            <div class="col-10">
+            <div class="col-4 mb-4">
               <input class="form-control" type="text" id="city-input" placeholder="Search..." />
             </div>
-            <div class="col-auto">
-              <button type="button col-1" class="btn btn-outline-warning mb-3" id="search-glass" value="go-search">
+            <div class="col-2">
+              <button type="button" class="btn btn-outline-warning mb-3" id="search-glass" value="go-search">
                 <i class="fa-solid fa-magnifying-glass i-search"></i>
               </button>
             </div>
           </form>
           <div class="row">
-            <div class="col-8">
+            <div class="col-8 city-info">
               <h1 class="city">Lisboa</h1>
               <h2 class="description">Clear sky</h2>
               <h5 class="date"> Data </p>
             </div>
-            <div class="col-2">
+            <div class="col-4 weather-info">
               <h3 class="temperature" id="current-temperature">36ºC</h3>
+              <p class="" id="humidity"> Humidity: x%</p>
+              <p class="" id="wind-speed">Wind speed: x Km/h</p>
             </div>
+          </div>
             <div class="col">
               <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png" alt="" class="">
             </div>
-          </div>
+          
           </div>
         </div>
-        Coded by Salomé Esteves. <a href="https://github.com/salomeEsteves/SheCodes_weatherApp" target="_blank" rel="noreferrer"> Open code here.</a> 
+        <p class="note"> 👩🏻‍💻 Coded by <a href="https://github.com/salomeEsteves/SheCodes_weatherApp" target="_blank" rel="noreferrer"> Salomé Esteves </a> </p>
             </div>
+          </div>
         </div>
       
     <script src="app.js"></script>
