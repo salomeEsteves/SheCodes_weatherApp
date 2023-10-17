@@ -57,8 +57,7 @@ function showCity(event) {
   axios.get(apiUrl).then(changeTemp);
 }
 
-showCity("Lisbon");
-
 let selectCity = document.querySelector("#city-form");
 selectCity.addEventListener("click", showCity);
 
+showCity("Lisbon");
