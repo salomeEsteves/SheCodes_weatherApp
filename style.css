@@ -55,6 +55,7 @@ h5 {
 .active {
   color: #000);
   cursor: default;
+  font-weight: bold;
 }
 
 .active:hover {
