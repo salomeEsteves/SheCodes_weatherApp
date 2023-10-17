@@ -24,7 +24,7 @@ function changeTemp(response) {
   let temperature = Math.round(response.data.main.temp);
   h3.innerHTML = `${temperature}°C`;
   let h2 = document.querySelector("h2");
-  h2.innerHTML = response.data.sys.country;
+  h2.innerHTML = response.data.weather[0].description;;
 }
 
 function showCity(event) {
