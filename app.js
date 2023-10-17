@@ -26,9 +26,9 @@ function formatDate(date) {
 formatDate(currentTime);
 
 function changeTemp(response) {
-  let h3 = document.querySelector("h3");
+  let currentTemperature = document.querySelector("#current-temperature");
   let temperature = Math.round(response.data.main.temp);
-  h3.innerHTML = `${temperature}°C`;
+  currentTemperature.innerHTML = temperature;
   let h2 = document.querySelector("h2");
   h2.innerHTML = response.data.weather[0].description;
   let humidityElement = document.querySelector("#humidity");
