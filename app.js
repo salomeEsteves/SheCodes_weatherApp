@@ -38,9 +38,6 @@ function changeTemp(response) {
 }
 
 
-
-
-
 function showCity(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input");
