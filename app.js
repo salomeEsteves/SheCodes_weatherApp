@@ -28,7 +28,7 @@ formatDate(currentTime);
 function changeTemp(response) {
   let currentTemperature = document.querySelector("#current-temperature");
   let temperature = Math.round(response.data.main.temp);
-  currentTemperature.innerHTML = `${temperature}ºC`;
+  currentTemperature.innerHTML = `${temperature}ºF`;
 
   let fahrenheitTemperature = document.querySelector("#current-temperature-farenheit");
   fahrenheitTemperature.innerHTML = `${Math.round((temperature * 9) / 5 + 32)}ºF`;
@@ -50,15 +50,17 @@ function changeTemp(response) {
 
 
 function showCity(event) {
+  let apiKey = "535cacbb3f8a0df0aeb4790235b9541f";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(changeTemp);
+}
+
+function handleSubmit(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input");
   let h1 = document.querySelector("h1");
   h1.innerHTML = cityInput.value;
-
-  let apiKey = "535cacbb3f8a0df0aeb4790235b9541f";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&units=metric`;
-
-  axios.get(apiUrl).then(changeTemp);
+showCity(cityInput.value)
 }
 
 let selectCity = document.querySelector("#city-form");
