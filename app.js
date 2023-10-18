@@ -45,11 +45,10 @@ function changeTemp(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-  console.log(response.data.weather[0].description);
 }
 
 
-function showCity(event) {
+function showCity(city) {
   let apiKey = "535cacbb3f8a0df0aeb4790235b9541f";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(changeTemp);
@@ -60,7 +59,8 @@ function handleSubmit(event) {
   let cityInput = document.querySelector("#city-input");
   let h1 = document.querySelector("h1");
   h1.innerHTML = cityInput.value;
-showCity(cityInput.value)
+  
+  showCity(cityInput.value);
 }
 
 let selectCity = document.querySelector("#city-form");
