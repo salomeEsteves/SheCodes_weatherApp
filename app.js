@@ -64,6 +64,6 @@ showCity(cityInput.value)
 }
 
 let selectCity = document.querySelector("#city-form");
-selectCity.addEventListener("click", showCity);
+selectCity.addEventListener("click", handleSubmit);
 
 showCity("Lisbon");
