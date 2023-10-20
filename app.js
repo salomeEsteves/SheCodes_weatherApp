@@ -28,7 +28,7 @@ formatDate(currentTime);
 function changeTemp(response) {
   let currentTemperature = document.querySelector("#current-temperature");
   let temperature = Math.round(response.data.main.temp);
-  currentTemperature.innerHTML = `${temperature}ºF`;
+  currentTemperature.innerHTML = `${temperature}ºC`;
 
   let fahrenheitTemperature = document.querySelector("#current-temperature-farenheit");
   fahrenheitTemperature.innerHTML = `${Math.round((temperature * 9) / 5 + 32)}ºF`;
