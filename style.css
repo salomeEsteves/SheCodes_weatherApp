@@ -132,7 +132,7 @@ li:first-letter {
 
 .weather-forecast-date {
   font-size: 16px;
-  opacity: 0.5;
+  color:#88CFF8;
 }
 
 .weather-forecast-temperature-min {
