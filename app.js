@@ -64,6 +64,6 @@ function handleSubmit(event) {
 }
 
 let selectCity = document.querySelector("#city-form");
-selectCity.addEventListener("click", handleSubmit);
+selectCity.addEventListener("submit", handleSubmit);
 
 showCity("Lisbon");
